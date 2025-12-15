@@ -21,5 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run app check
-        run: node index.js
+      - name: Run CI health check
+  run: npm run test:ci
+
+
+

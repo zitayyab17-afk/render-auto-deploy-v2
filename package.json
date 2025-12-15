@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test:ci": "node index.js & wait-on http://localhost:3000 && curl http://localhost:3000",
+    "start": "node index.js",
+    "check": "node -c index.js"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,8 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "wait-on": "^9.0.3"
   }
 }
